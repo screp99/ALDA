@@ -129,8 +129,8 @@ public class TopologicalSort<V> {
 		g.addEdge("Pulli", "Mantel");
 		g.addEdge("Muetze", "Handschuhe");
 
-		// ist vielleicht g.addEdge("Schal", "Hose"); gemeint?
-		g.addEdge("Hose", "Schal");
+		g.addEdge("Schal", "Hose");
+		// g.addEdge("Hose", "Schal");
 
 		TopologicalSort<String> ts = new TopologicalSort<>(g);
 		if (ts.topologicalSortedList() != null) {
