@@ -115,11 +115,13 @@ public class ShortestPath<V> {
 			}
 			kl.remove(currentNode);
 
-			System.out.println(
-					String.format("Besuche Knoten %d mit d = %f", (Integer) currentNode, dist.get(currentNode)));
 			// Station durch einen farbigen Kreis auf der Karte kennzeichnen
-			if (sim != null)
+			if (sim != null) {
 				sim.visitStation((Integer) currentNode, Color.blue);
+			} else {
+				System.out.println(
+						String.format("Besuche Knoten %d mit d = %f", (Integer) currentNode, dist.get(currentNode)));
+			}
 
 			// Zielknoten erreicht
 			if (!isDijkstra && currentNode.equals(g)) {
